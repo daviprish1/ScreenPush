@@ -1,0 +1,5 @@
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\WindowClasses\bin\Debug\WindowClasses.dll
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\WindowClasses\bin\Debug\WindowClasses.pdb
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\WindowClasses\obj\Debug\WindowClasses.csprojResolveAssemblyReference.cache
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\WindowClasses\obj\Debug\WindowClasses.dll
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\WindowClasses\obj\Debug\WindowClasses.pdb

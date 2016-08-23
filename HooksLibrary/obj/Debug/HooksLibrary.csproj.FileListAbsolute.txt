@@ -1,0 +1,8 @@
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\bin\Debug\HooksLibrary.dll
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\bin\Debug\HooksLibrary.pdb
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\obj\Debug\HooksLibrary.csprojResolveAssemblyReference.cache
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\obj\Debug\HooksLibrary.dll
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\obj\Debug\HooksLibrary.pdb
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\bin\Debug\CloudinaryDotNet.dll
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\denis\Documents\Visual Studio 2013\Projects\ScreenPush\HooksLibrary\bin\Debug\Newtonsoft.Json.xml
