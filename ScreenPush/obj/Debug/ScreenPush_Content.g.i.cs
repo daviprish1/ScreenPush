@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("appconfig.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/trayico.ico")]
 
 

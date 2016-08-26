@@ -60,15 +60,16 @@ namespace ScreenPush.SupportClasses
             }
         }
 
-        public AppSettings(string brushName, Key key, KeyModifier keymod)
+        public AppSettings(string brushName, Key key, KeyModifier keymod, KeyModifier secKeymod)
         {
             this.CustomBrushName = brushName;
             this.ActivateKey = key;
             this.ActivateMod = keymod;
+            this.ActivateSecondaryMod = secKeymod;
         }
 
         public AppSettings()
-            :this("Indigo", Key.S, KeyModifier.Shift)
+            :this("Indigo", Key.S, KeyModifier.Shift, KeyModifier.None)
         { }
     }
 }

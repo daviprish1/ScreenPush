@@ -222,11 +222,13 @@ namespace ScreenPush
             }
             catch (System.IO.FileNotFoundException e)
             {
-                MessageBox.Show("Config file not found! Program will create new config file with next start");
+                this.taskbIcon.ShowBalloonTip("Error!", "Config file not found! Program will create new config file with next start", 
+                    Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Error);
             }
             catch (NullReferenceException e)
             {
-                MessageBox.Show("Some key does not found in config file... Please delete config file after shutdown program.");
+                this.taskbIcon.ShowBalloonTip("Error!", "Some key does not found in config file... Please delete config file after shutdown program.",
+                    Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Error);
             }
         }
 
@@ -244,12 +246,27 @@ namespace ScreenPush
             {
                 if (jsToken["url"] != null)
                 {
-                    //MessageBox.Show(jsToken["url"].ToString());
                     Clipboard.SetText(jsToken["url"].ToString());
+                    this.taskbIcon.ShowBalloonTip("Image Created!", jsToken["url"].ToString(), Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
                 }
             }
             else
-                MessageBox.Show("SOME ERROR");
+                this.taskbIcon.ShowBalloonTip("Error!", "Some internet error!", Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Error);
+        }
+
+        private void MenuExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MenuMouseEnter(object sender, RoutedEventArgs e)
+        {
+            Mouse.OverrideCursor = System.Windows.Input.Cursors.Arrow;
+        }
+
+        private void MenuMauseLeave(object sender, RoutedEventArgs e)
+        {
+            Mouse.OverrideCursor = System.Windows.Input.Cursors.Cross;
         }
     }
 }
