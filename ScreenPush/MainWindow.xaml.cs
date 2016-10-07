@@ -55,6 +55,12 @@ namespace ScreenPush
             this.ReadFromConfigFile();
 
             _hotKey = new HotKey(settings.ActivateKey, settings.ActivateMod | settings.ActivateSecondaryMod, OnHotKeyHandler);
+            this.taskbIcon.TrayBalloonTipClicked += taskbIcon_TrayBalloonTipClicked;
+        }
+
+        void taskbIcon_TrayBalloonTipClicked(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(balloonUri);
         }
 
         private readonly string imageRepo = "imageRepo";
@@ -71,6 +77,7 @@ namespace ScreenPush
         Cloudinary cloudinary;
         private string LastImgPath
         { get; set; }
+        private string balloonUri;
 
         private void OnHotKeyHandler(HotKey hotKey)
         {
@@ -146,7 +153,10 @@ namespace ScreenPush
                 {
                     using (Drawing.Graphics g = Drawing.Graphics.FromImage(bitmap))
                     {
-                        g.CopyFromScreen((int)this.startPoint.X - 3, (int)this.startPoint.Y - 3, 0, 0,
+                        WindowsPoint imgStart = new WindowsPoint();
+                        imgStart.Y = this.startPoint.Y < this.endPoint.Y ? this.startPoint.Y : this.endPoint.Y;
+                        imgStart.X = this.startPoint.X < this.endPoint.X ? this.startPoint.X : this.endPoint.X;
+                        g.CopyFromScreen((int)imgStart.X - 3, (int)imgStart.Y - 3, 0, 0,
                             new Drawing.Size((int)bounds.Width, (int)bounds.Height));
                     }
                     string formName = string.Format("[d {0:dd-MM-yy}][t {0:H.mm.ss}]{1}.jpg", DateTime.Now, bitmap.GetHashCode());
@@ -247,6 +257,7 @@ namespace ScreenPush
                 if (jsToken["url"] != null)
                 {
                     Clipboard.SetText(jsToken["url"].ToString());
+                    this.balloonUri = jsToken["url"].ToString();
                     this.taskbIcon.ShowBalloonTip("Image Created!", jsToken["url"].ToString(), Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
                 }
             }
@@ -268,5 +279,6 @@ namespace ScreenPush
         {
             Mouse.OverrideCursor = System.Windows.Input.Cursors.Cross;
         }
+
     }
 }
